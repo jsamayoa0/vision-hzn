@@ -132,9 +132,9 @@ sudo systemctl restart docker.service
 
 #### Reference:
 MVI Vision-Edge Document 
-https://www.ibm.com/docs/en/maximo-vi/8.4.0
+https://www.ibm.com/docs/en/maximo-vi/8.6.0
 
-https://www.ibm.com/docs/en/maximo-vi/8.4.0?topic=planning-installing-docker-nvidia-docker2 
+https://www.ibm.com/docs/en/maximo-vi/8.6.0?topic=planning-installing-docker-nvidia-docker2 
 
 ### MVI - Vision Edge deployment
 `DO NOT move forward` until the edge node infrastruture is properly setup as above - `nvidia-smi` and `/etc/docker/daemon.json`

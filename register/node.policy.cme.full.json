@@ -1,6 +1,6 @@
 {
   "properties": [
-      { "name": "owner", "value": "ibm.edge" },
+      { "name": "owner", "value": "$EDGE_OWNER" },
       { "name": "deploy", "value": "example.vision-hzn" },
       { "name": "ve.cme", "value": true },
       { "name": "node.full", "value": true },

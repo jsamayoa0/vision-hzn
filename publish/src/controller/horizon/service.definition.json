@@ -9,14 +9,15 @@
     "arch": "$ARCH",
     "sharable": "singleton",
     "requiredServices": [
-	{ "url": "$EDGE_OWNER.$EDGE_DEPLOY.vision-edge-dle", "org": "$HZN_ORG_ID", "version": "8.4.0", "versionRange": "8.4.0", "arch": "$ARCH" }
+	{ "url": "$EDGE_OWNER.$EDGE_DEPLOY.vision-edge-dle", "org": "$HZN_ORG_ID", "version": "8.6.0", "versionRange": "8.6.0", "arch": "$ARCH" }
     ],
     "userInput": [
 	{ "name": "DLE_SERVICE_IP", "label": "DLE_SERVICE_IP", "type": "string", "defaultValue": "" },
+  { "name": "CME_SERVICE_IP", "label": "CME_SERVICE_IP", "type": "string", "defaultValue": "" },
 	{ "name": "HOSTNAME", "label": "hostname -f", "type": "string", "defaultValue": "" },
 	{ "name": "SHMEM_SIZE", "label": "ctlrshmem", "type": "int", "defaultValue": "" },
-    { "name": "runmode", "label": "runmode", "type": "string", "defaultValue": "hzn" },
-    { "name": "HOSTROOT", "label": "hostroot", "type": "string", "defaultValue": "$VE_HOST_SERVICE_ROOT" }
+  { "name": "runmode", "label": "runmode", "type": "string", "defaultValue": "hzn" },
+  { "name": "HOSTROOT", "label": "hostroot", "type": "string", "defaultValue": "$VE_HOST_SERVICE_ROOT" }
     ],
     "deployment": {
         "services": {
@@ -33,6 +34,7 @@
 		    "$VE_HOST_SERVICE_ROOT/volume/run/pstbspc:$CONTAINER_APP_ROOT/pstbspc",
 		    "$VE_HOST_SERVICE_ROOT/volume/run/pgbackrest:$CONTAINER_APP_ROOT/pgbackrest",
 		    "$VE_HOST_SERVICE_ROOT/volume/run/var:$CONTAINER_APP_ROOT/var",
+        "$VE_HOST_SERVICE_ROOT/volume/run/images:$CONTAINER_APP_ROOT/videos",
 		    "$VE_HOST_SERVICE_ROOT/volume/run/images:$CONTAINER_APP_ROOT/images",
 		    "$VE_HOST_SERVICE_ROOT/volume/data/images:$CONTAINER_APP_ROOT/usrimages",
 		    "$VE_HOST_SERVICE_ROOT/volume/run/downloaded_models:$CONTAINER_APP_ROOT/downloaded_models",

@@ -9,22 +9,24 @@
     "arch": "$ARCH",
     "sharable": "singleton",
     "requiredServices": [
-	{ "url": "$EDGE_OWNER.$EDGE_DEPLOY.vision-edge-dle", "org": "$HZN_ORG_ID", "version": "8.4.0", "versionRange": "8.4.0", "arch": "$ARCH" },
-	{ "url": "vision-edge-controller", "org": "$HZN_ORG_ID", "version": "8.4.0", "versionRange": "8.4.0", "arch": "$ARCH" }
+	{ "url": "$EDGE_OWNER.$EDGE_DEPLOY.vision-edge-dle", "org": "$HZN_ORG_ID", "version": "8.6.0", "versionRange": "8.6.0", "arch": "$ARCH" },
+	{ "url": "vision-edge-controller", "org": "$HZN_ORG_ID", "version": "8.6.0", "versionRange": "8.6.0", "arch": "$ARCH" }
     ],
     "userInput": [
       { "name": "CONFIG_FOLDER", "label": "config_folder", "type": "string", "defaultValue": "$CONTAINER_APP_ROOT/var/config" },
-      { "name": "LOG_LEVEL", "label": "cme_log_level", "type": "string", "defaultValue": "INFO" }
+      { "name": "LOG_LEVEL", "label": "cme_log_level", "type": "string", "defaultValue": "TRACE" },
+      { "name": "CME_PORT", "label": "cme_port", "type": "int", "defaultValue": "9000" }
     ],
     "deployment": {
         "services": {
             "$SERVICE_NAME": {
                 "image": "${DOCKER_IMAGE}:$SERVICE_VERSION",
                 "privileged": true,
-		"binds": [
-		    "$VE_HOST_SERVICE_ROOT/volume/run/var:$CONTAINER_APP_ROOT/var",
-		    "$VE_HOST_SERVICE_ROOT/volume/data/images:$CONTAINER_APP_ROOT/usrimages",
-		    "$VE_HOST_SERVICE_ROOT/volume/run/images:$CONTAINER_APP_ROOT/images"
+            		"binds": [
+                  "$VE_HOST_SERVICE_ROOT/volume/run/var:$CONTAINER_APP_ROOT/var",
+                  "$VE_HOST_SERVICE_ROOT/volume/data/images:$CONTAINER_APP_ROOT/usrimages",
+                  "$VE_HOST_SERVICE_ROOT/volume/run/images:$CONTAINER_APP_ROOT/images",
+                  "$VE_HOST_SERVICE_ROOT/volume/run/videos:$CONTAINER_APP_ROOT/videos"
                 ]
             }
         }

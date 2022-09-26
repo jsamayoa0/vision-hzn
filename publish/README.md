@@ -1,18 +1,18 @@
-## Publish MVI Vision Edge Application Service and Policy 
+## Publish MVI Vision Edge Application Service and Policy
 
 `DO NOT PUBLISH` container images into external docker repo. Use IBM Container Registry only with authentication. `COMPANY CONFIDENTIAL`.
 
-This uses containers from MVI Vision Edge 8.4.0 releaae. 
+This uses containers from MVI Vision Edge 8.6.0 releaae.
 
 1. Setup code signing key (This is to be done once on the dev node)
 ```
  hzn key create IBM <your-full-email-id@company.com>
 ```
-2. Clone or copy this code locally on your dev machine, 
+2. Clone or copy this code locally on your dev machine,
 
 3. Setup these ENVs to publish the service and policy. Put these ENV vars in a file to source them conveniently. These ENVs include the ones required for register and additional ones.  
 ```
-### Prefix for the services naming convention 
+### Prefix for the services naming convention
 export EDGE_OWNER=<string-to-group-your-services> # e.g: sg.edge
 export EDGE_DEPLOY=<string-to-group-your-services> # e.g: example.vision-hzn
 
@@ -46,4 +46,3 @@ make
 ```
 
 5. See `register` section to register the node.
-
